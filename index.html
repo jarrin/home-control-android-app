@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+		<meta name="mobile-web-app-capable" content="yes">
+		<link rel="stylesheet" href="themes/holo-dark/holo-dark.min.css" />
+		<link rel="icon" sizes="196x196" href="favicon_196.png">
+		<style >
+			.icon-fries:before 
+			{
+				content: "";
+			}
+			.icon-fries
+			{
+				background: url("favicon_196.png");
+				background-size: 100% 100%;
+				margin-right: 10px;
+			}
+			.list-item-multi-line > div
+			{
+				float: left;
+			}
+			.list-item-multi-line > .onoffswitch
+			{
+				float: right;
+				margin-top: 5px;
+			}
+			.onoffswitch {
+		    position: relative; width: 100px;
+		    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+		    }
+		    .onoffswitch-checkbox {
+		    display: none;
+		    }
+		    .onoffswitch-label {
+		    display: block; overflow: hidden; cursor: pointer;
+		    border: 0px solid #999999; border-radius: 0px;
+		    }
+		    .onoffswitch-inner {
+		    width: 200%; margin-left: -100%;
+		    -moz-transition: margin 0.3s ease-in 0s; -webkit-transition: margin 0.3s ease-in 0s;
+		    -o-transition: margin 0.3s ease-in 0s; transition: margin 0.3s ease-in 0s;
+		    }
+		    .onoffswitch-inner > div {
+		    float: left; position: relative; width: 50%; height: 30px; padding: 0; line-height: 30px;
+		    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+		    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+		    }
+		    .onoffswitch-inner .onoffswitch-active {
+		    padding-left: 15px;
+		    background-color: #C2C2C2; color: #FFFFFF;
+		    }
+		    .onoffswitch-inner .onoffswitch-inactive {
+		    padding-right: 15px;
+		    background-color: #C2C2C2; color: #FFFFFF;
+		    text-align: right;
+		    }
+		    .onoffswitch-switch {
+		    width: 40px; margin: 0px; text-align: center;
+		    border: 0px solid #999999;border-radius: 0px;
+		    position: absolute; top: 0; bottom: 0;
+		    }
+		    .onoffswitch-active .onoffswitch-switch {
+		    background: #27A1CA; left: 0;
+		    }
+		    .onoffswitch-inactive .onoffswitch-switch {
+		    background: #A1A1A1; right: 0;
+		    }
+		    .onoffswitch-active .onoffswitch-switch:before {
+		    content: " "; position: absolute; top: 0; left: 40px;
+		    border-style: solid; border-color: #27A1CA transparent transparent #27A1CA; border-width: 15px 10px;
+		    }
+		    .onoffswitch-inactive .onoffswitch-switch:before {
+		    content: " "; position: absolute; top: 0; right: 40px;
+		    border-style: solid; border-color: transparent #A1A1A1 #A1A1A1 transparent; border-width: 15px 10px;
+		    }
+		    .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+		    margin-left: 0;
+		    }
+		</style>
+
+	</head>
+	<body>
+		<div class="page">
+
+		<header class="action-bar fixed-top">
+			<a href="javascript: void(0);" class="app-icon action" data-ignore="true">
+				<i class="icon-fries"></i>
+			</a>
+			<h1 class="title">Lights Control</h1>
+		</header>
+		<nav class="tab-fixed">
+			<ul class="tab-inner">
+				<li class="active"><a href="#people" data-ignore="true"><i class="icon-person"></i></a></li>
+				<li><a href="#groups" data-ignore="true"><i class="icon-group"></i></a></li>
+				<li><a href="#favorites" data-ignore="true"><i class="icon-star-full"></i></a></li>
+			</ul>
+		</nav>
+		<div class="content">
+
+<div class="slider tab-slider">
+        <ul>
+          <li id="people" class="tab-item active">
+            <ul class="list inset">
+              <li class="list-divider">Slaapkamer Verlichting</li>
+              <li class="list-item-multi-line">
+               	<div >Hoofdverlichting</div>
+            	<div class="onoffswitch">
+					<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+				    <label class="onoffswitch-label" for="myonoffswitch">
+						<div class="onoffswitch-inner">
+						    <div class="onoffswitch-active"><div class="onoffswitch-switch">ON</div></div>
+						    <div class="onoffswitch-inactive"><div class="onoffswitch-switch">OFF</div></div>
+					    </div>
+				    </label>
+			    </div> 
+
+              </li>
+   
+            </ul>
+          </li>
+          <li id="groups" class="tab-item">
+            <ul class="list inset">
+              <li class="list-divider">Groups</li>
+              <li class="list-item-single-line selectable"><a href="javascript: void(0);" data-ignore="true">Acquaintances</a></li>
+              <li class="list-item-single-line selectable"><a href="javascript: void(0);" data-ignore="true">Family</a></li>
+              <li class="list-item-single-line selectable"><a href="javascript: void(0);" data-ignore="true">Friends</a></li>
+              <li class="list-item-single-line selectable"><a href="javascript: void(0);" data-ignore="true">Work</a></li>
+            </ul>
+          </li>
+          <li id="favorites" class="tab-item">
+            <ul class="list inset">
+              <li class="list-divider">Favorites</li>
+              <li class="list-item-two-lines selectable">
+                <a href="#" data-ignore="true">
+                  <h3>Fries</h3>
+                  <p>https://github.com/jaunesarmiento/fries</p>
+                </a>
+              </li>
+              <li class="list-item-two-lines selectable">
+                <a href="#" data-ignore="true">
+                  <h3>Ratchet</h3>
+                  <p>https://github.com/maker/ratchet</p>
+                </a>
+              </li>
+              <li class="list-item-two-lines selectable">
+                <a href="#" data-ignore="true">
+                  <h3>Android Developers</h3>
+                  <p>http://developer.android.com/</p>
+                </a>
+              </li>
+              <li class="list-item-two-lines selectable">
+                <a href="#" data-ignore="true">
+                  <h3>GitHub</h3>
+                  <p>https://github.com/</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+    </div>		
+
+		</div>
+
+		<script src="fries.min.js"></script>
+	</body>
+</html>
